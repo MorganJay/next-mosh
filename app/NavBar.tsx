@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const NavBar = () => {
   return (
-    <nav className="flex bg-slate-200 p-5">
+    <nav className="flex p-5">
       <Link href="/" className="mr-5">
         Next.js
       </Link>

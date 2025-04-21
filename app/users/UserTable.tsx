@@ -33,9 +33,15 @@ const UserTable = async ({ sortOrder }: Props) => {
       </thead>
       <tbody>
         {sortedUsers.map(user => (
-          <tr key={user.id}>
+          <tr key={user.id} className="relative">
             <td>{user.name}</td>
             <td>{user.email}</td>
+            <td>
+              <Link
+                href={`/users/${user.id}`}
+                className="absolute top-0 left-0 w-full h-full"
+              />
+            </td>
           </tr>
         ))}
       </tbody>

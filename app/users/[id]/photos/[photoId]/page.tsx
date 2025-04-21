@@ -1,11 +1,12 @@
 interface Props {
-  params: {
+  params: Promise<{
     id: number;
     photoId: number;
-  };
+  }>;
 }
 
-const UserPhotoPage = ({ params: { id, photoId } }: Props) => {
+const UserPhotoPage = async ({ params }: Props) => {
+  const { id, photoId } = await params;
   return (
     <div>
       UserPhotoPage {id} {photoId}

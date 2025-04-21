@@ -1,14 +1,13 @@
 interface Props {
-  params: {
+  params: Promise<{
     slug: string[];
-  };
-  searchParams: { sortOrder: string };
+  }>;
+  searchParams: Promise<{ sortOrder: string }>;
 }
 
-const ProductPage = ({
-  params: { slug },
-  searchParams: { sortOrder },
-}: Props) => {
+const ProductPage = async ({ params, searchParams }: Props) => {
+  const { slug } = await params;
+  const { sortOrder } = await searchParams;
   return (
     <div>
       Product Page {slug} {sortOrder}
